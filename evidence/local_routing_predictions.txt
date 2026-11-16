@@ -1,0 +1,6 @@
+1 bangalore.koramangala.food -> ['Ravi', 'Meena', 'Control']
+2 bangalore.indiranagar.ride -> ['Priya', 'Arjun', 'Control']
+3 bangalore.whitefield.ride -> ['Arjun', 'Control']
+4 chennai.tnagar.food -> ['Karthik']
+5 chennai.whitefield.ride -> dropped
+6 bangalore.koramangala -> ['Control']

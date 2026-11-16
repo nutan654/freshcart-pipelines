@@ -1,0 +1,3 @@
+project_type: standalone
+variables_dir: ~/.mage_data
+variables_retention_period: '90d'

@@ -1,0 +1,3 @@
+# Optional Snowflake notebook / streaming integration dependencies.
+-r requirements.txt
+snowflake-connector-python>=3.12

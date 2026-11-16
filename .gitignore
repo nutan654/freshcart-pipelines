@@ -1,0 +1,25 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Data and model outputs
+*.pkl
+*.csv
+*.json.gz
+freshcart_landing/
+bonus_batch.json
+
+# Mage / Python runtime
+mage.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.mage_data/
+
+# Notebook / OS noise
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

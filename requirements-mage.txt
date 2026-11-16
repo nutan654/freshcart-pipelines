@@ -1,0 +1,3 @@
+# Optional local Mage runtime; do not install this in the lightweight CI job.
+-r requirements.txt
+mage-ai>=0.9

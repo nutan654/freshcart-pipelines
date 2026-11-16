@@ -1,0 +1,32 @@
+A1 local fault reproduction (GitHub Actions not run)
+===================================================
+Fault: temporarily change train_test_split test_size from 0.2 to 0.3.
+Command: pytest -q tests/test_prepare_data.py
+Exit code: 1
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________________ test_prepare_data_keeps_instructor_80_20_split ________________
+
+    def test_prepare_data_keeps_instructor_80_20_split():
+        df = load_iris(as_frame=True).frame
+        result = transform(df)
+        assert len(result) == 150
+>       assert (result["split"] == "train").sum() == 120
+E       AssertionError: assert np.int64(105) == 120
+E        +  where np.int64(105) = sum()
+E        +    where sum = 81     train\n133    train\n137    train\n75     train\n109    train\n       ...  \n142     test\n85      test\n86      test\n16      test\n10      test\nName: split, Length: 150, dtype: object == 'train'.sum
+
+tests/test_prepare_data.py:10: AssertionError
+----------------------------- Captured stdout call -----------------------------
+Train rows: 105 | Test rows: 45
+=========================== short test summary info ============================
+FAILED tests/test_prepare_data.py::test_prepare_data_keeps_instructor_80_20_split - AssertionError: assert np.int64(105) == 120
+ +  where np.int64(105) = sum()
+ +    where sum = 81     train\n133    train\n137    train\n75     train\n109    train\n       ...  \n142     test\n85      test\n86      test\n16      test\n10      test\nName: split, Length: 150, dtype: object == 'train'.sum
+1 failed in 0.76s
+
+Recovery: restore test_size=0.2.
+Command: pytest -q
+Exit code: 0
+..............                                                           [100%]
+14 passed in 0.88s
